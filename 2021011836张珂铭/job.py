@@ -1,6 +1,6 @@
-from zkm_homework import Decorator
-from zkm_homework import Iter
-from zkm_homework import RandomNumber
+from work2 import Decorator
+from work3 import Iter
+from work1 import RandomNumber
 
 if __name__ == '__main__':
     while True:
