@@ -31,13 +31,17 @@ def structDataSampling(num, struct):
         result.append(element)
     return result
 
+def main():
+    struct = {
+        int: {'datarange': ([1, 100], [1, 100])},
+        float: {'datarange': ((0.0, 10.0),)},
+        str: {'datarange': ((string.ascii_letters, 3), ("sdsdhfjl", 5))}
+    }
+    data = structDataSampling(3, struct)
+    print("产生随机列表的结果为：\n", data)
 
-struct = {
-    int: {'datarange': ([1, 100], [1, 100])},
-    float: {'datarange': ((0.0, 10.0),)},
-    str: {'datarange': ((string.ascii_letters, 3), ("sdsdhfjl", 5))}
-}
+if __name__ == '__main__':
+    main()
 
-data = structDataSampling(3, struct)
-print("产生随机数组的结果为：\n", data)
+
 
