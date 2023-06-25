@@ -1,7 +1,9 @@
-from gqsJob.functions.structDataSampling import structDataSamplingComplicated, dataSampling, structDataSamplingSimple
-from gqsJob.functions.structDataSampling import func
+import sys
+sys.path.append("./functions")
+sys.path.append("../")
+from structDataSampling import dataSampling,structDataSamplingSimple,structDataSamplingComplicated,func
 
-def option(choice):
+def optionfir(choice):
     # print("请选择执行的函数，dataSampling,structDataSamplingSimple,structDataSamplingComplicated")
     try:
         if choice == 'dataSampling':

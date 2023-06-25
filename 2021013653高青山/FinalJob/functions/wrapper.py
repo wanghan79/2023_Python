@@ -1,6 +1,9 @@
 # 在上次作业的基础上，生成50个六维向量，修饰器进行求和或者求均值（根据参数决定）
 import random
-from gqsJob.utils.math import average, getsum
+import sys
+sys.path.append("../")
+sys.path.append("./")
+from utils.math import getsum,average
 
 
 def structDataSampling(num, struct):

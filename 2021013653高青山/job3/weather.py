@@ -1,7 +1,7 @@
 from collections.abc import Iterator, Iterable
 import requests as r
 import json
-with open("../gqsJob/input/城市编码表.json", 'r', encoding='UTF-8') as f:
+with open("../FinalJob/input/城市编码表.json", 'r', encoding='UTF-8') as f:
     data = json.loads(f.read())
     data = data.get('城市代码')
 

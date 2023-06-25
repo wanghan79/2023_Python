@@ -1,7 +1,10 @@
-from gqsJob.functions.weather import WeatherIterable
+import sys
+sys.path.append("./functions")
+sys.path.append("../")
+from weather import WeatherIterable
 
 struct = list()
-def option(choice = 0):
+def optionthr(choice = 0):
     print('请依次输入所有想要查询的城市，再次输入回车确认输入完成')
     while(1):
         str = input()

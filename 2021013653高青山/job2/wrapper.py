@@ -1,8 +1,36 @@
 # 在上次作业的基础上，生成50个六维向量，修饰器进行求和或者求均值（根据参数决定）
 import random
-from gqsJob.utils.math import average, getsum
+
+class MyError(Exception):
+    def __init__(self,value):
+        self.value = value
+    def __str__(self):
+        return repr(self.value)
+def isError(number):
+    if number <= 0:
+        raise MyError("num 不能为负数")
+def getsum(temp):
+    m = 0
+    for i, element in enumerate(temp):
+        n = 0
+        for j in iter(element):
+            n = n + j
+        print(f"第{i+1}组数据的和为{n}")
+        m = m + n
+    print("------------------------")
+    print(f"<---此次数据的总和为{m}--->")
 
 
+def average(temp):
+    m = 0
+    for i, element in enumerate(temp):
+        n = 0
+        for j in iter(element):
+            n = n + j
+        print(f"第{i+1}组数据的均值为{n/len(element)}")
+        m = m + n
+    print("------------------------")
+    print(f"<---此次数据的总均值为{m/len(temp)/len(element)}--->")
 def structDataSampling(num, struct):
     result = list()
     for index in range(0, num):
@@ -68,6 +96,11 @@ def func(num):
 
 print("请输入num，表示生成num维数据")
 num = int(input())
+try:
+    isError(num)
+except MyError as res:
+    print(res)
+    print()
 func(num)
 
 

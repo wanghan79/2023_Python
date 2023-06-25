@@ -1,4 +1,6 @@
-from gqsJob.functions.functionsService import structDataSamplingService, wrapperService,weatherService
+from functions.functionsService.structDataSamplingService import optionfir
+from functions.functionsService.wrapperService import optionsec
+from functions.functionsService.weatherService import optionthr
 
 def func():
     while(1):
@@ -12,13 +14,13 @@ def func():
         if num == 1:
             print('执行第一次小作业')
             print("请选择执行的函数，dataSampling,structDataSamplingSimple,structDataSamplingComplicated")
-            structDataSamplingService.option(input())
+            optionfir(input())
         elif num == 2:
             print('执行第二次小作业')
-            wrapperService.option()
+            optionsec()
         elif num == 3:
             print('执行第三次小作业')
-            weatherService.option()
+            optionthr()
         elif num == 4:
             print("拜拜！！！")
             break
