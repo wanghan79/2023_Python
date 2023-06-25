@@ -100,7 +100,6 @@ try:
     isError(num)
 except MyError as res:
     print(res)
-    print()
 func(num)
 
 
