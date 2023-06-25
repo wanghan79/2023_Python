@@ -31,7 +31,7 @@ def structDataSampling(num, struct):
         result.append(element)
     return result
 
-def main():
+def run():
     struct = {
         int: {'datarange': ([1, 100], [1, 100])},
         float: {'datarange': ((0.0, 10.0),)},
@@ -41,7 +41,7 @@ def main():
     print("产生随机列表的结果为：\n", data)
 
 if __name__ == '__main__':
-    main()
+    run()
 
 
 
