@@ -1,9 +1,9 @@
 import string
 
-from finalwork.weather.WeatherServer import WeatherIterable, func, city_input
-from finalwork.utils.Modifier import aop2
-from finalwork.utils.MyException import choose_input
-from finalwork.utils.RandomDataUtil import dataSampling, structDataSampling
+from weather.WeatherServer import WeatherIterable, func, city_input
+from utils.Modifier import aop2
+from utils.MyException import choose_input
+from utils.RandomDataUtil import dataSampling, structDataSampling
 
 
 def main_server():
