@@ -3,7 +3,6 @@ sys.path.append("../work1/")
 sys.path.append("work1/")
 from DataSampling import structDataSampling as fun_StructRandom
 def dataProcess(*decorator_args):
-    # 传入被修饰的函数
     def decorator(func):
         def wrapper(*args):
             temp = func(*args)
@@ -42,8 +41,6 @@ def run():
     struct = {
         int: {'datarange': ([1, 100], [1, 100])},
         float: {'datarange': ((0.0, 10.0),)},
-        # str: {'datarange':(("hahaha",3),)}
-        # 此处传入字符串目的是验证是否抛出异常
     }
     print("选择修饰器实现的功能：")
     print("输入 avg 代表对随机数进行求平均值")
