@@ -1,7 +1,5 @@
 import requests
-
 from collections.abc import Iterable,Iterator
-
 url="http://www.nmc.cn/dataservice/weather/map/ALL/day2.json?t=1685701082502&_=1685701063671"
 
 def seach(city, list):

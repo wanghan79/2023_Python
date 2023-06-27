@@ -1,6 +1,5 @@
 import random
 
-
 def dataProcess(*arg):
     def decorator(func):
         def wrapper(**kwargs):

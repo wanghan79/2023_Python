@@ -1,7 +1,6 @@
 import random
 def structDataSampling(**kwargs):
     """
-
     :param kwargs:
     :return:
     """

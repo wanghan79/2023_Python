@@ -2,6 +2,7 @@ from job1.work1 import show as random_fun
 from job2.work2 import show as sum_avg
 from job3.work3 import show as weather
 
+
 if __name__ == "__main__":
     while True:
         choose_num = input("输入作业编号(输入1，job2，job3，输入exit退出)：")
