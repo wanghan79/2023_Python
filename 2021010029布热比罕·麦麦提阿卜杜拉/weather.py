@@ -35,7 +35,10 @@ class WeatherIterable(Iterable):
 
     def __iter__(self):
         return WeatherIterator(self.cities)
-if __name__ == '__main__':
-    city = [u'北京',u'广州',u'长春',u'墨玉']
+
+def run():
+    city = [u'北京', u'广州', u'长春', u'墨玉']
     for weather in WeatherIterable(city):
         print(weather)
+if __name__ == '__main__':
+    run()

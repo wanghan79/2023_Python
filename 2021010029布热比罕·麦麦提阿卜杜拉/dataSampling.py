@@ -22,11 +22,7 @@ def structDataSampling(**kwargs):
             element.append(tmp)
         result.append(element)
     return result
-def dataSimpling(para):
-    print("随机数生成：")
-    print(structDataSampling(**para))
-
-if __name__=='__main__':
+def dataSimpling():
     para = {
         "num": 10,
         "struct": (
@@ -49,4 +45,9 @@ if __name__=='__main__':
             }
         )
     }
-    dataSimpling(para)
+    print("随机数生成：")
+    print(structDataSampling(**para))
+
+if __name__=='__main__':
+
+    dataSimpling()

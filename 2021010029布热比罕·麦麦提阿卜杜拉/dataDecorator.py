@@ -127,18 +127,7 @@ def structDataSampling_sum_avg(**kwargs):
     return result
 
 
-def decorator(para):
-    print("生成随机数:")
-    print(structDataSampling(**para))
-    print("随机数求和:")
-    print(structDataSampling_sum(**para))
-    print("随机数求平均:")
-    print(structDataSampling_avg(**para))
-    print("随机数求和求平均:")
-    print(structDataSampling_sum_avg(**para))
-
-
-if __name__ == '__main__':
+def decorator():
     para = {
         "num": 10,
         "struct": (
@@ -168,4 +157,16 @@ if __name__ == '__main__':
             }
         )
     }
-    decorator(para)
+    print("生成随机数:")
+    print(structDataSampling(**para))
+    print("随机数求和:")
+    print(structDataSampling_sum(**para))
+    print("随机数求平均:")
+    print(structDataSampling_avg(**para))
+    print("随机数求和求平均:")
+    print(structDataSampling_sum_avg(**para))
+
+
+if __name__ == '__main__':
+
+    decorator()
