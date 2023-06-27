@@ -9,13 +9,14 @@ class WeatherIterator(Iterator):
         self.index = 0
 
     def getWeather(self, city):
-        # 使用 urllib.request.urlopen 打开一个 URL 并返回一个文件对象
-        r = urllib.request.urlopen('http://t.weather.sojson.com/api/weather/city/' + urllib.parse.quote(city.encode('utf-8')))
-        # 使用 read 方法读取文件对象的内容，并使用 decode 方法将字节转换为字符串
-        data = r.read().decode('utf-8')
-        # 使用 json.loads 方法将字符串转换为 JSON 对象，并从中提取所需的数据
-        data = json.loads(data)['data']['forecast'][0]
-        return '%s:%s,%s' % (city, data['low'], data['high'])
+        city_code = cityDictionary.get(city)
+        if city_code:
+            r = urllib.request.urlopen('http://t.weather.sojson.com/api/weather/city/' + city_code)
+            data = r.read().decode('utf-8')
+            data = json.loads(data)['data']['forecast'][0]
+            return '%s:%s,%s' % (city, data['low'], data['high'])
+        else:
+            return '%s: City code not found' % city
 
     def __next__(self):
         if self.index == len(self.cities):
@@ -33,5 +34,16 @@ class WeatherIterable(Iterable):
         return WeatherIterator(self.cities)
 
 
-for x in WeatherIterable([u'101060101']):
+cityDictionary = {
+    "长春": "101060101",
+    "成都": "101270101",
+    "厦门": "101230201",
+    "广州": "101280101",
+    "上海": "101020100",
+    "石家庄": "101090101",
+    "郑州": "101180101",
+    "杭州": "101210101"
+}
+
+for x in WeatherIterable(["长春"]):
     print(x)
