@@ -1,0 +1,35 @@
+import random
+import string
+#练习一：1.随机数采样的函数封装 如何合理使用函数的参数进行动态的调用（datasampling）
+# 参数封装要采用kwargs
+# 给出任意一层结构下的随机数生成（任意给一个集合  按数量生成相应的随机数）至少保证给出的案例能成功运行
+
+def generate_data(**kwargs):
+    result = []
+    for index in range(kwargs['num']):
+        element = []
+        for key, value in kwargs['struct'].items():
+            if key == int:
+                it = iter(value['datarange'])
+                tmp = random.randint(next(it), next(it))
+            elif key == float:
+                it = iter(value['datarange'])
+                tmp = random.uniform(next(it), next(it))
+            elif key == str:
+                tmp = ''.join(random.SystemRandom().choice(value['datarange']) for _ in range(value['len']))
+            else:
+                break
+            element.append(tmp)
+        result.append(element)
+    return result
+
+test_dict = {
+    "num": 3,
+    "struct": {
+        int: {"datarange": [1, 10]},
+        float: {"datarange": [1.0, 10.0]},
+        str: {"datarange": string.ascii_letters, "len": 10}
+    }
+}
+result = generate_data(**test_dict)
+print(result)
