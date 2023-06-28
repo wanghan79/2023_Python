@@ -1,0 +1,61 @@
+<html>
+<head>
+<title>exer3.py</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #cc7832;}
+.s1 { color: #a9b7c6;}
+.s2 { color: #808080;}
+.s3 { color: #6897bb;}
+.s4 { color: #6a8759;}
+</style>
+</head>
+<body bgcolor="#2b2b2b">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+exer3.py</font>
+</center></td></tr></table>
+<pre><span class="s0">import </span><span class="s1">urllib.request</span>
+<span class="s0">from </span><span class="s1">collections.abc </span><span class="s0">import </span><span class="s1">Iterable</span><span class="s0">, </span><span class="s1">Iterator</span>
+<span class="s0">import </span><span class="s1">json</span>
+<span class="s2">#3.照着上节课模版 区别：上节课url不好使自己找一个url</span>
+
+<span class="s0">class </span><span class="s1">WeatherIterator(Iterator):</span>
+    <span class="s0">def </span><span class="s1">__init__(self</span><span class="s0">, </span><span class="s1">cities):</span>
+        <span class="s1">self.cities = cities</span>
+        <span class="s1">self.index = </span><span class="s3">0</span>
+    <span class="s0">def </span><span class="s1">getWeather(self</span><span class="s0">, </span><span class="s1">city):</span>
+        <span class="s1">city_code = cityDictionary.get(city)</span>
+        <span class="s0">if </span><span class="s1">city_code:</span>
+            <span class="s1">r = urllib.request.urlopen(</span><span class="s4">'http://t.weather.sojson.com/api/weather/city/' </span><span class="s1">+ city_code)</span>
+            <span class="s1">data = r.read().decode(</span><span class="s4">'utf-8'</span><span class="s1">)</span>
+            <span class="s1">data = json.loads(data)[</span><span class="s4">'data'</span><span class="s1">][</span><span class="s4">'forecast'</span><span class="s1">][</span><span class="s3">0</span><span class="s1">]</span>
+            <span class="s0">return </span><span class="s4">'%s:%s,%s' </span><span class="s1">% (city</span><span class="s0">, </span><span class="s1">data[</span><span class="s4">'low'</span><span class="s1">]</span><span class="s0">, </span><span class="s1">data[</span><span class="s4">'high'</span><span class="s1">])</span>
+        <span class="s0">else</span><span class="s1">:</span>
+            <span class="s0">return </span><span class="s4">'%s: City code not found' </span><span class="s1">% city</span>
+
+    <span class="s0">def </span><span class="s1">__next__(self):</span>
+        <span class="s0">if </span><span class="s1">self.index == len(self.cities):</span>
+            <span class="s0">raise </span><span class="s1">StopIteration</span>
+        <span class="s1">city = self.cities[self.index]</span>
+        <span class="s1">self.index += </span><span class="s3">1</span>
+        <span class="s0">return </span><span class="s1">self.getWeather(city)</span>
+
+<span class="s0">class </span><span class="s1">WeatherIterable(Iterable):</span>
+    <span class="s0">def </span><span class="s1">__init__(self</span><span class="s0">, </span><span class="s1">cities):</span>
+        <span class="s1">self.cities = cities</span>
+    <span class="s0">def </span><span class="s1">__iter__(self):</span>
+        <span class="s0">return </span><span class="s1">WeatherIterator(self.cities)</span>
+<span class="s1">cityDictionary = {</span>
+<span class="s4">&quot;广州&quot;</span><span class="s1">: </span><span class="s4">&quot;101280101&quot;</span><span class="s0">,</span>
+    <span class="s4">&quot;长春&quot;</span><span class="s1">: </span><span class="s4">&quot;101060101&quot;</span><span class="s0">, </span><span class="s4">&quot;厦门&quot;</span><span class="s1">: </span><span class="s4">&quot;101230201&quot;</span><span class="s0">,</span>
+    <span class="s4">&quot;成都&quot;</span><span class="s1">: </span><span class="s4">&quot;101270101&quot;</span><span class="s0">,</span>
+    <span class="s4">&quot;石家庄&quot;</span><span class="s1">: </span><span class="s4">&quot;101090101&quot;</span><span class="s0">,</span>
+    <span class="s4">&quot;郑州&quot;</span><span class="s1">: </span><span class="s4">&quot;101180101&quot;</span><span class="s0">,</span>
+    <span class="s4">&quot;杭州&quot;</span><span class="s1">: </span><span class="s4">&quot;101210101&quot;</span>
+<span class="s1">}</span>
+<span class="s0">for </span><span class="s1">x </span><span class="s0">in </span><span class="s1">WeatherIterable([</span><span class="s4">&quot;长春&quot;</span><span class="s1">]):</span>
+    <span class="s1">print(x)</span></pre>
+</body>
+</html>
