@@ -32,7 +32,6 @@ class WeatherIterable(Iterable):
         return WeatherIterator(self.cities)
 
 
-
 class show:
     def __init__(self):
         self.name = 'weather'
