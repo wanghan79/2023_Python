@@ -31,7 +31,6 @@ class WeatherIterable(Iterable):
     def __iter__(self):
         return WeatherIterator(self.cities)
 
-
 class show:
     def __init__(self):
         self.name = 'weather'
@@ -40,6 +39,6 @@ class show:
             print(x)
 
 if __name__ == '__main__':
-    hw03 = show()
+    work3 = show()
     a = ['北京', '长春']
-    hw03.show(a)
+    work3.show(a)
