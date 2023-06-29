@@ -81,4 +81,4 @@ para = {
 
 if __name__ == '__main__':
     hw02 = structDataSampling(**para)
-    print(hw02)
+    print(work2)
