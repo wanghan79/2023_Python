@@ -13,7 +13,6 @@ def final_test(test_num):
         return
     print(result.read())
 
-
 if __name__ == '__main__':
     while True:
         test_n = input("请输入展示的作业号：")
