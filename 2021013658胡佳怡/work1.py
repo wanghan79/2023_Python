@@ -33,4 +33,4 @@ if __name__ == '__main__':
                 "data3":
                     {"datatype": 'str', "datarange": string.ascii_uppercase, "len": 50}}
             }
-    print(dataSampling(**hw01))
+    print(dataSampling(**work1))
