@@ -1,8 +1,5 @@
 
 import random
-# 随机数生成的修饰器，进行求和或求均值或两者都要
-
-
 
 def dataProcess(*arg):
     def decorator(func):
