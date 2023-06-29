@@ -16,6 +16,6 @@ def final_test(test_num):
 
 if __name__ == '__main__':
     while True:
-        test_n = input("请输入要求展示的作业号：")
+        test_n = input("请输入展示的作业号：")
         final_test(test_n)
 
