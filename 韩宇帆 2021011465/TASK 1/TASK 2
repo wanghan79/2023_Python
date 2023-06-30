@@ -1,0 +1,49 @@
+import random
+import string
+
+def dataSampling(dataType, datarange, num, strlen=8):
+    result = []
+    for index in range(num):
+        if dataType == int:
+            it = iter(datarange)
+            item = random.randint(next(it), next(it))
+            result.append(item)
+        elif dataType == float:
+            it = iter(datarange)
+            item = random.uniform(next(it), next(it))
+            result.append(item)
+        elif dataType == str:
+            item = ''.join(random.SystemRandom().choice(datarange) for _ in range(strlen))
+            result.append(item)
+    return result
+
+def dataOperation(*args):
+    def decorator(func):
+        def wrapper(*args, **kwargs):
+            result = func(*args, **kwargs)
+
+            if 'sum' in args:
+                result_sum = sum(result)
+                print("Sum:", result_sum)
+
+            if 'avg' in args:
+                result_avg = sum(result) / len(result)
+                print("Average:", result_avg)
+
+            return result
+
+        return wrapper
+
+    return decorator
+
+@dataOperation('sum', 'avg')
+def structDataSampling(num, struct):
+    result = []
+    for _ in range(num):
+        element = {}
+        for key, value in struct.items():
+            element[key] = dataSampling(key, value['datarange'], 1, value.get('len', 8))
+        result.append(element)
+    return result
+
+result = structDataSampling(10, {'int': {'datarange': (0, 10)}, 'str': {'datarange': string.ascii_letters + "&*_", 'len': 10}, 'float': {'datarange': (0.0, 1.0)}})
