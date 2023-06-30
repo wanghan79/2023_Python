@@ -6,7 +6,7 @@ import json
 
 def get_city_data():
     script_dir = os.path.dirname(os.path.abspath(__file__))
-    file_path = os.path.join(script_dir, '城市编码表.json')
+    file_path = os.path.join(script_dir, '../城市编码表.json')
     with open(file_path, 'r', encoding='utf8') as f:
         data = json.load(f)
     dict = {}
