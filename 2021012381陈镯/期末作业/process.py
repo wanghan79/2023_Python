@@ -54,26 +54,26 @@ def dataSampling(**kwargs):
         res.append(element)
     return res
 
-
-a = dataSampling(num=50, struct={
-        'a': {
-            "type": int,
-            'data_range': (0, 100)},
-        'b': {
-            "type": int,
-            'data_range': (0, 100)},
-        'c': {
-            "type": int,
-            'data_range': (0, 100)},
-        'd': {
-            "type": int,
-            'data_range': (0, 100)},
-        'e': {
-            "type": int,
-            'data_range': (0, 100)},
-        'f': {
-            "type": int,
-            'data_range': (0, 100)}
-    })
-print(a)
+def test_process():
+    a = dataSampling(num=50, struct={
+            'a': {
+                "type": int,
+                'data_range': (0, 100)},
+            'b': {
+                "type": int,
+                'data_range': (0, 100)},
+            'c': {
+                "type": int,
+                'data_range': (0, 100)},
+            'd': {
+                "type": int,
+                'data_range': (0, 100)},
+            'e': {
+                "type": int,
+                'data_range': (0, 100)},
+            'f': {
+                "type": int,
+                'data_range': (0, 100)}
+        })
+    print(a)
 
