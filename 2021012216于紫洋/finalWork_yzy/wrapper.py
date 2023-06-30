@@ -41,13 +41,12 @@ def addSum(arr):
         tmp = 0
         for j in range(0, len(arr[i])):
             tmp += arr[i][j]
-            result.append(tmp)
+        result.append(tmp)
         all += tmp
         print(f"第{i + 1}组数据的总和为{tmp}")
     result.append(all)
     print(f"数据的总和为{all}")
     return result
-
 
 def avg(arr):
     tmp = addSum(arr)
