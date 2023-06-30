@@ -3,7 +3,7 @@ import data_sum_avg
 import weather
 def main():
     while True:
-        print(" Enter a number : 1 is hmwk1 , 2 is hmwk2 , 3 is hmwk3 , others are exit")
+        print(" Enter a number : 1 is dataSampling , 2 is data_sum_avg , 3 is weather , others are exit")
         a = input("请输入：")
         if a == '1':
             datasampling.DataSampling_res()
