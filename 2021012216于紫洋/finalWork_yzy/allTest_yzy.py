@@ -35,7 +35,7 @@ def run():
             else:
                 print('数字的范围是0~3')
                 OverError()
-        except  OverError:
-            print('请输入一个数字')
-
+        except MyException as e:
+            print('Error!', e)
+            print("请重新输入一个数")
 run()

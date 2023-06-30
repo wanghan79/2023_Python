@@ -93,7 +93,11 @@ def run():
         elif x == '0':
             break
         else:
-            OverError()
+            try:
+                OverError()
+            except MyException as e:
+                print('Error!', e)
+                print("请重新输入一个数")
 
 
 @dataProcess("sum")
