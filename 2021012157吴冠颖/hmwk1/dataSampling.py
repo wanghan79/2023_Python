@@ -21,13 +21,16 @@ def DataSampling(**kwargs):
         result.append(element)
     return result
 
+def DataSampling_res():
+    eg = {"num": 3,
+          "struct": {
+              int: {"datarange": [0, 100]},
+              float: {"datarange": [0, 100]},
+              str: {"datarange": string.ascii_letters, "len": 10}
+          }
+          }
+    print(DataSampling(**eg))
+
 
 if __name__ == '__main__':
-    eg = {"num": 3,
-                "struct": {
-                    int: {"datarange": [0, 100]},
-                    float: {"datarange": [0, 100]},
-                    str: {"datarange": string.ascii_letters, "len": 10}
-                }
-                }
-    print(DataSampling(**eg))
+    DataSampling_res()
