@@ -62,16 +62,14 @@ def DataSamplingRes4(**kwargs):
     return DataSampling(**kwargs)
 
 
-para = {"num": 3,
+def cal_res():
+    para = {"num": 3,
         "struct": {
             int: {"datarange": [0, 100]},
             float: {"datarange": [0, 100]},
             str: {"datarange": string.ascii_letters, "len": 10}
         }
         }
-
-
-if __name__ == '__main__':
     print("修饰器参数0个，不实现任何操作：")
     result1 = DataSamplingRes1(**para)
     print(str(result1) + "\n")
@@ -87,3 +85,7 @@ if __name__ == '__main__':
     print("修饰器参数2个，同时实现SUM和AVG操作：")
     result4 = DataSamplingRes4(**para)
     print(str(result4) + "\n")
+
+
+if __name__ == '__main__':
+    cal_res()
