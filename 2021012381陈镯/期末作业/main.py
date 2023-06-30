@@ -5,14 +5,13 @@ import weather
 def final_test(test_num):
     global result
     if test_num == "1":
-        sampling.
+        sampling.test_sampling()
     elif test_num == "2":
-        process.
+        process.test_process()
     elif test_num == "3":
         weather.test_weather()
     else:
         return
-    print(result.read())
 
 if __name__ == '__main__':
     while True:
