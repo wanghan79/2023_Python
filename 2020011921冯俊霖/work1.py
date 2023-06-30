@@ -1,3 +1,9 @@
+#!/usr/bin/env python
+# coding: utf-8
+
+# In[1]:
+
+
 import random
 import string
 
@@ -30,3 +36,10 @@ def dataSampling_test1():
 
 if __name__ == '__main__':
     dataSampling_test1()
+
+
+# In[ ]:
+
+
+
+
