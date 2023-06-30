@@ -1,12 +1,13 @@
-import os
+import sampling
+import process
 import weather
 
 def final_test(test_num):
     global result
     if test_num == "1":
-        result = os.popen("python sampling.py")
+        sampling.
     elif test_num == "2":
-        result = os.popen("python process.py")
+        process.
     elif test_num == "3":
         weather.test_weather()
     else:
