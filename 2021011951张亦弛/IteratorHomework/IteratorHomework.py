@@ -48,5 +48,5 @@ class WeatherIterable():
         return WeatherIterator(self.cities)
 
 
-# for x in WeatherIterable(["北京", "上海"]):
-#     print("----" * 10)
+for x in WeatherIterable(["北京", "上海"]):
+    print("----" * 10)
