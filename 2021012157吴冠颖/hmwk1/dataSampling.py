@@ -2,18 +2,18 @@ import random
 import string
 
 
-def DataSamoling(**kwargs):
+def DataSampling(**kwargs):
     result = list()
     for index in range(0, kwargs["num"]):
         element = list()
         for key, value in kwargs['struct'].items():
-            if value['datatype'] == int:
+            if key == int:
                 it = iter(value['datarange'])
                 tmp = random.randint(next(it), next(it))
-            elif value['datatype'] == float:
+            elif key == float:
                 it = iter(value['datarange'])
                 tmp = random.uniform(next(it), next(it))
-            elif value['datatype'] == str:
+            elif key == str:
                 tmp = ''.join(random.SystemRandom().choice(value['datarange'] )for _ in range(value['len']))
             else:
                 break
