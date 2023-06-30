@@ -79,8 +79,8 @@ def run():
     try:
         for x in WeatherIterable(ask):
             print(x)
-    except Exception as out:
-        print(out)
+    except Exception :
+        print("请求过于频繁，请稍后重试")
 
 
 if __name__ == '__main__':
