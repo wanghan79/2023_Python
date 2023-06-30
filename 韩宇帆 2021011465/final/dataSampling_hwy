@@ -1,0 +1,24 @@
+import random
+
+def dataSampling(**kwargs):
+    result = []
+
+    for key, value in kwargs.items():
+        data_type = key
+        num = value
+
+        if data_type == 'int':
+            result.extend(random.randint(0, 100) for _ in range(num))
+        elif data_type == 'float':
+            result.extend(random.uniform(0, 100) for _ in range(num))
+        elif data_type == 'str':
+            result.extend(''.join(random.choices('abcdefghijklmnopqrstuvwxyz', k=random.randint(1, 10))) for _ in range(num))
+
+    return result
+int_data = dataSampling(int=5)
+float_data = dataSampling(float=3)
+str_data = dataSampling(str=4)
+
+print(int_data)
+print(float_data)
+print(str_data)
