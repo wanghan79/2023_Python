@@ -1,6 +1,6 @@
-import DataSampling
-import Sum
-import Weather
+import work1
+import work2
+import work3
 
 def show():
     print(u"请输入数字0~3，其中0为退出，数字1~3分别为查看程序1~3")
@@ -10,11 +10,11 @@ def show():
             if x == 0:
                 break
             elif x == 1:
-                DataSampling.show()
+                work1.show()
             elif x == 2:
-                Sum.show()
+                work2.show()
             elif x == 3:
-                Weather.show()
+                work3.show()
             else:
                 print(u'输入错误')
 
