@@ -54,21 +54,21 @@ def structDataSampling2(**kwargs):
     return result
 
 if __name__ == '__main__':
-    # 共60行，每行5个元素。
+    # 共21行，每行5个元素。
     result = structDataSampling2(num=21, struct=(
         {
             'dataType': 'int',
-            'dataRange': (1, 100),
+            'dataRange': (10, 100),
             'num': 1
         },
         {
             'dataType': 'int',
-            'dataRange': (500, 700),
+            'dataRange': (500, 800),
             'num': 1
         },
         {
             'dataType': 'float',
-            'dataRange': (3.6, 7.8),
+            'dataRange': (1.2, 4.8),
             'num': 3
         }
     ))
