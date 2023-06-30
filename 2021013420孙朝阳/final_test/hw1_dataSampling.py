@@ -28,8 +28,9 @@ def genStructs(num_input, structures):
 structure = {"struct": ({"type": int, "range": [0, 100]}, {"type": float, "range": [0, 100]},
                         {"type": str, "range": ['a', 'b', 'c', 'd', 'e', 'f', 'g'], "len": 10})}
 
-num_structs = 10  # 指定生成10个结构体
-results = genStructs(num_structs, structure)
-print("生成的随机数据结构如下：")
-for struct in results:
-    print(struct)
+if __name__ == "__main__":
+    num_structs = 10  # 指定生成10个结构体
+    results = genStructs(num_structs, structure)
+    print("生成的随机数据结构如下：")
+    for struct in results:
+        print(struct)
