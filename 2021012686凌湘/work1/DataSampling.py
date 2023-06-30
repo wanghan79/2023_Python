@@ -23,7 +23,7 @@ def structDataSampling(num, struct):
                     tmp = ''.join(random.SystemRandom().choice(
                         item[0]) for _ in range(item[1]))
                 else:
-                    raise TypeError("文本类型错误！！！")
+                    raise TypeError("文本错误！！！")
                 element.append(tmp)
         result.append(element)
     return result
@@ -34,7 +34,7 @@ def run():
         str: {'datarange': ((string.ascii_letters, 3), ("sdsdhfjl", 5))}
     }
     data = structDataSampling(3, struct)
-    print("产生随机列表的结果为：\n", data)
+    print("产生的结果为：\n", data)
 if __name__ == '__main__':
     run()
 
