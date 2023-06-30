@@ -20,19 +20,20 @@ def data_Sampling(**kwargs):
         result.append(element)
     return result
 
-a = data_Sampling(
-        num=10,
-        struct={
-            "a": {
-                "data_type": "int",
-                "data_range": (0, 100)},
-            "b": {
-                "data_type": "float",
-                "data_range": (0, 100)},
-            "c": {
-                "data_type": "str",
-                "data_range": ('abc', 'xyz'), "len": 10}
-        }
-    )
-print(a)
+def test_sampling():
+    a = data_Sampling(
+            num=10,
+            struct={
+                "a": {
+                    "data_type": "int",
+                    "data_range": (0, 100)},
+                "b": {
+                    "data_type": "float",
+                    "data_range": (0, 100)},
+                "c": {
+                    "data_type": "str",
+                    "data_range": ('abc', 'xyz'), "len": 10}
+            }
+        )
+    print(a)
 
