@@ -39,15 +39,12 @@ def sum_avg_decorator(*args):
 @sum_avg_decorator()
 def generate_random_data_1(**kwargs):
     return dataSampling(**kwargs)
-
 @sum_avg_decorator('SUM', 'AVG') 
 def generate_random_data_2(**kwargs):
     return dataSampling(**kwargs)
-
 @sum_avg_decorator('SUM') 
 def generate_random_data_3(**kwargs):
     return dataSampling(**kwargs)
-
 @sum_avg_decorator('AVG') 
 def generate_random_data_4(**kwargs):
     return dataSampling(**kwargs)
