@@ -44,6 +44,6 @@ def kwargsDataSapling(**kwargs):
         result.append(element)
     return result
 
-# s = {'dataType1':[float, {'datarange':(0,100)}], 'dataType2':[float, {'datarange':(0,100)}], 'dataType3':[float, {'datarange':(0,100)}], 'dataType4':[float, {'datarange':(0,100)}], 'dataType5':[float, {'datarange':(0,100)}], 'dataType6':[float, {'datarange':(0,100)}]}
-# result = kwargsDataSapling(num=50, struct=s)
-# print(result)
+s = {'dataType1':[float, {'datarange':(0,100)}], 'dataType2':[float, {'datarange':(0,100)}], 'dataType3':[float, {'datarange':(0,100)}], 'dataType4':[float, {'datarange':(0,100)}], 'dataType5':[float, {'datarange':(0,100)}], 'dataType6':[float, {'datarange':(0,100)}]}
+result = kwargsDataSapling(num=50, struct=s)
+print(result)
