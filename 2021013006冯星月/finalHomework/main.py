@@ -1,6 +1,7 @@
 import Weather
-import dataSampling
-import Computing
+from finalHomework import Computing, dataSampling
+
+
 def function_one():
     a = 5
 

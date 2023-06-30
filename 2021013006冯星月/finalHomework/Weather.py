@@ -29,6 +29,9 @@ class WeatherIterable(Iterable):
 
 
 
-if __name__ == '__main__':
-    for x in WeatherIterable(['北京', '长春']):
-        print(x)
+class hw03:
+    def __init__(self):
+        self.name = 'weather'
+    def show(self,a):
+        for x in WeatherIterable(a):
+            print(x)
