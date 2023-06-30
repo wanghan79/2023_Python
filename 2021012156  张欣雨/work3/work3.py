@@ -14,7 +14,7 @@ class WeatherIterator(Iterator):
         data = r.json()['data']
         weather = seach(city, data)
         if weather == 0:
-            return '请检查您输入的城市，区县名字是否正确或该城市，区县不在数据库'
+            return '输入城市不正确'
         return '%s: 最高温【%s】 ,最低温【%s】 ' %(city, weather[8], weather[13])
 
     def __next__(self):
