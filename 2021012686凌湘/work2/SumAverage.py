@@ -42,9 +42,9 @@ def run():
         int: {'datarange': ([1, 100], [1, 100])},
         float: {'datarange': ((0.0, 10.0),)},
     }
-    print("输入 avg 对随机数求均值")
-    print("输入 sum 对随机数求和")
-    print("输入 all 显示随机数组以及求和与均值的结果")
+    #输入 avg 对随机数求均值
+    #输入 sum 对随机数求和
+    #输入 all 显示随机数组以及求和与均值的结果
     choose_type = input("请输入： ")
     @dataProcess(choose_type)
     def structDataSampling(num, struct):
