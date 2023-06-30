@@ -1,12 +1,5 @@
 import random
 import string
-'''
-:param num 代表生成随机列表项的个数
-:param struct 代表传入的参数是个字典类型 
-    例如：{int: {'datarange': ([1, 100], [1, 100])}}
-    每一项的key是数据类型，包括[int,float,str]
-    每一项的value是个字典类型，字典的key是"datarange",value是可迭代对象， 包括 [],()
-'''
 def structDataSampling(num, struct):
     result = list()
     for _ in range(num):
